@@ -15,7 +15,7 @@ func Question() gin.HandlerFunc {
 		var question []models.Question
 		category, limit, difficulty := userParams(c)
 		if limit == "" {
-			limit = "1"
+			limit = "10"
 		}
 
 		if difficulty == "" {
@@ -40,14 +40,14 @@ func Question() gin.HandlerFunc {
 			fmt.Println(errMar)
 		}
 
-		c.JSON(http.StatusOK, gin.H{"data": question, "length": len(question)})
+		c.JSON(http.StatusOK, gin.H{"data": question, "length": len(question), "status": http.StatusOK})
 	}
 }
 
 func userParams(c *gin.Context) (string, string, string) {
-	category := string(c.Params.ByName("category"))
-	limit := string(c.Params.ByName("limit"))
-	difficulty := string(c.Params.ByName("difficulty"))
+	category := string(c.Query("category"))
+	limit := string(c.Query("limit"))
+	difficulty := string(c.Query("difficulty"))
 
 	return category, limit, difficulty
 }
