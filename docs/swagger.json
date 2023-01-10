@@ -1,0 +1,118 @@
+{
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "swagger": "2.0",
+    "info": {
+        "description": "This is an api that brings out random quiz",
+        "title": "Quiz-API",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "name": "Confidence James",
+            "url": "https://github.com/jamesconfy",
+            "email": "bobdence@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0"
+    },
+    "host": "billowing-glade-1.fly.dev",
+    "basePath": "/api/v1",
+    "paths": {
+        "/": {
+            "get": {
+                "description": "Question route",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Question"
+                ],
+                "summary": "Get questions",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "category",
+                        "name": "category",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "limit",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "difficulty",
+                        "name": "difficulty",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.Question"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "models.Question": {
+            "type": "object",
+            "properties": {
+                "category": {
+                    "type": "string"
+                },
+                "correctAnswer": {
+                    "type": "string"
+                },
+                "difficulty": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "incorrectAnswers": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "isNiche": {
+                    "type": "boolean"
+                },
+                "question": {
+                    "type": "string"
+                },
+                "regions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "type": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

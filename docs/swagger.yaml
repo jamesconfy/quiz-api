@@ -1,0 +1,79 @@
+basePath: /api/v1
+definitions:
+  models.Question:
+    properties:
+      category:
+        type: string
+      correctAnswer:
+        type: string
+      difficulty:
+        type: string
+      id:
+        type: string
+      incorrectAnswers:
+        items:
+          type: string
+        type: array
+      isNiche:
+        type: boolean
+      question:
+        type: string
+      regions:
+        items:
+          type: string
+        type: array
+      tags:
+        items:
+          type: string
+        type: array
+      type:
+        type: string
+    type: object
+host: billowing-glade-1.fly.dev
+info:
+  contact:
+    email: bobdence@gmail.com
+    name: Confidence James
+    url: https://github.com/jamesconfy
+  description: This is an api that brings out random quiz
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Quiz-API
+  version: "1.0"
+paths:
+  /:
+    get:
+      consumes:
+      - application/json
+      description: Question route
+      parameters:
+      - description: category
+        in: query
+        name: category
+        type: string
+      - description: limit
+        in: query
+        name: limit
+        type: string
+      - description: difficulty
+        in: query
+        name: difficulty
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.Question'
+            type: array
+      summary: Get questions
+      tags:
+      - Question
+schemes:
+- http
+- https
+swagger: "2.0"

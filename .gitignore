@@ -1,0 +1,4 @@
+docker-*
+fly.toml
+go.*
+main
