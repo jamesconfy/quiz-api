@@ -19,7 +19,7 @@
         },
         "version": "1.0"
     },
-    "host": "billowing-glade-1.fly.dev",
+    "host": "quiet-waterfall-4501.fly.dev",
     "basePath": "/api/v1",
     "paths": {
         "/": {

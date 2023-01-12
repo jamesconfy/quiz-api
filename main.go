@@ -16,7 +16,7 @@ func main() {
 	// @license.name  Apache 2.0
 	// @license.url   http://www.apache.org/licenses/LICENSE-2.0.html
 
-	// @host      twilight-wildflower-8017.fly.dev
+	// @host      quiet-waterfall-4501.fly.dev
 	// @BasePath  /api/v1
 
 	// @schemes http https
