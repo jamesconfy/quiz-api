@@ -19,7 +19,7 @@
         },
         "version": "1.0"
     },
-    "host": "quiet-waterfall-4501.fly.dev",
+    "host": "confy-quiz-api.fly.dev",
     "basePath": "/api/v1",
     "paths": {
         "/": {

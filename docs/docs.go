@@ -123,7 +123,7 @@ const docTemplate = `{
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = &swag.Spec{
 	Version:          "1.0",
-	Host:             "quiet-waterfall-4501.fly.dev",
+	Host:             "confy-quiz-api.fly.dev",
 	BasePath:         "/api/v1",
 	Schemes:          []string{"http", "https"},
 	Title:            "Quiz-API",
